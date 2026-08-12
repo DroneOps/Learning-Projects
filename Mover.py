@@ -8,20 +8,21 @@ def print_instructions():
     print("\n" + "=" * 45)
     print("      CONTROL MANUAL TELLO (CONSOLA)")
     print("=" * 45)
-    print(" [T] = Despegar (Takeoff)")
-    print(" [L] = Aterrizar (Land)")
-    print(" [Flechas] = Adelante / Atrás / Izq / Der")
-    print(" [W / S]   = Subir / Bajar")
-    print(" [A / D]   = Girar Izquierda / Derecha")
-    print(" [ESC / Q] = Salir / Emergencia")
+    print(" [Q] = Despegar (Takeoff)")
+    print(" [E] = Aterrizar (Land)")
+    print(" [W] = Adelante")
+    print(" [S] = Atras")
+    print(" [A] = Izquierda")
+    print(" [D] = Derecha")
+    print(" [Y / U]   = Subir / Bajar")
+    print(" [R / T]   = Girar Izquierda / Derecha")
+    print(" [ESC] = Salir")
     print("=" * 45 + "\n")
 
 
 def get_keyboard_input(key):
-    """
-    Traduce la tecla presionada en OpenCV a comandos de velocidad.
-    Retorna: (Comando, (roll (izquierda/derecha), pitch(adelante/atras), throttle(arriba/abajo), yaw(Rotacion)))
-    """
+    # (Comando, (roll (izquierda/derecha), pitch(adelante/atras), throttle(arriba/abajo), yaw(Rotacion)))
+
     lr, fb, ud, yv = 0, 0, 0, 0
     speed = 50  
 

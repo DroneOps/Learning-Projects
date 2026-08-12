@@ -4,7 +4,7 @@ Este proyecto contiene una colección de scripts sencillos y educativos utilizan
 
 ## Requerimientos:
 
-Antes de ejecutar los scripts, asegúrate de tener instalado Python, djitellopy y opencv-python, ademas de configurar tu entorno de trabajo.
+Antes de ejecutar los scripts, asegúrate de tener instalado Python, djitellopy, pygame y opencv-python, ademas de configurar tu entorno de trabajo.
 
 --- 
 ## Scripts
