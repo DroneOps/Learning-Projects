@@ -18,10 +18,8 @@ def print_instructions():
 
 
 def get_keyboard_input(key):
-    """
-    Traduce la tecla presionada en OpenCV a comandos de velocidad.
-    Retorna: (Comando, (roll (izquierda/derecha), pitch(adelante/atras), throttle(arriba/abajo), yaw(Rotacion)))
-    """
+    # (Comando, (roll (izquierda/derecha), pitch(adelante/atras), throttle(arriba/abajo), yaw(Rotacion)))
+
     lr, fb, ud, yv = 0, 0, 0, 0
     speed = 50  
 
