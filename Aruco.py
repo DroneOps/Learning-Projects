@@ -85,7 +85,7 @@ def main():
         print(f"Error al conectar con el Tello: {e}")
         return
 
-    # Crear el detector ArUco (Usando el diccionario 6x6_50 de tu script)
+    # Crear el detector ArUco (Usando el diccionario 6x6_50)
     aruco_dict = aruco.getPredefinedDictionary(aruco.DICT_6X6_50)
     parameters = aruco.DetectorParameters()
     detector = aruco.ArucoDetector(aruco_dict, parameters)
