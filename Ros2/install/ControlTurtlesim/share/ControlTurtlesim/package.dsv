@@ -1,0 +1,6 @@
+source;share/ControlTurtlesim/hook/pythonpath.ps1
+source;share/ControlTurtlesim/hook/pythonpath.dsv
+source;share/ControlTurtlesim/hook/pythonpath.sh
+source;share/ControlTurtlesim/hook/ament_prefix_path.ps1
+source;share/ControlTurtlesim/hook/ament_prefix_path.dsv
+source;share/ControlTurtlesim/hook/ament_prefix_path.sh

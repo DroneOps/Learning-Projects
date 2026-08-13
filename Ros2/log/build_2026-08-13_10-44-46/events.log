@@ -1,0 +1,53 @@
+[0.000000] (-) TimerEvent: {}
+[0.000302] (ControlTurtlesim) JobQueued: {'identifier': 'ControlTurtlesim', 'dependencies': OrderedDict()}
+[0.000355] (ControlTurtlesim) JobStarted: {'identifier': 'ControlTurtlesim'}
+[0.099231] (-) TimerEvent: {}
+[0.199503] (-) TimerEvent: {}
+[0.299771] (-) TimerEvent: {}
+[0.400042] (-) TimerEvent: {}
+[0.500308] (-) TimerEvent: {}
+[0.600581] (-) TimerEvent: {}
+[0.700848] (-) TimerEvent: {}
+[0.801126] (-) TimerEvent: {}
+[0.901413] (-) TimerEvent: {}
+[1.001684] (-) TimerEvent: {}
+[1.101968] (-) TimerEvent: {}
+[1.202238] (-) TimerEvent: {}
+[1.302533] (-) TimerEvent: {}
+[1.402868] (-) TimerEvent: {}
+[1.441523] (ControlTurtlesim) Command: {'cmd': ['/usr/bin/python3', '-W', 'ignore:setup.py install is deprecated', '-W', 'ignore:easy_install command is deprecated', 'setup.py', 'egg_info', '--egg-base', '../build/ControlTurtlesim', 'build', '--build-base', '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/build', 'install', '--record', '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/install.log', '--single-version-externally-managed', 'install_data'], 'cwd': '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/ControlTurtlesim', 'env': {'LESSOPEN': '| /usr/bin/lesspipe %s', 'HYPRCURSOR_THEME': 'Bibata-Modern-Classic', 'GZ_SIM_RESOURCE_PATH': '/opt/ros/jazzy/share', 'HYPRLAND_CMD': 'Hyprland --watchdog-fd 4', 'LANGUAGE': 'en_US:en', 'USER': 'mojarras', 'HYPRLAND_INSTANCE_SIGNATURE': 'a0136d8c04687bb36eb8a28eb9d1ff92aea99704_1786637553_196851856', 'LC_TIME': 'es_MX.UTF-8', 'GZ_CONFIG_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/share/gz:/opt/ros/jazzy/opt/sdformat_vendor/share/gz:/opt/ros/jazzy/opt/gz_gui_vendor/share/gz:/opt/ros/jazzy/opt/gz_transport_vendor/share/gz:/opt/ros/jazzy/opt/gz_rendering_vendor/share/gz:/opt/ros/jazzy/opt/gz_plugin_vendor/share/gz:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/share/gz:/opt/ros/jazzy/opt/gz_msgs_vendor/share/gz:/opt/ros/jazzy/opt/gz_common_vendor/share/gz', 'XDG_SEAT': 'seat0', 'STARSHIP_SHELL': 'bash', 'XDG_SESSION_TYPE': 'wayland', 'XCURSOR_SIZE': '16', 'SHLVL': '1', 'LD_LIBRARY_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor/lib:/opt/ros/jazzy/opt/gz_sensors_vendor/lib:/opt/ros/jazzy/opt/gz_physics_vendor/lib:/opt/ros/jazzy/opt/sdformat_vendor/lib:/opt/ros/jazzy/opt/rviz_ogre_vendor/lib:/opt/ros/jazzy/lib/x86_64-linux-gnu:/opt/ros/jazzy/opt/gz_gui_vendor/lib:/opt/ros/jazzy/opt/gz_transport_vendor/lib:/opt/ros/jazzy/opt/gz_rendering_vendor/lib:/opt/ros/jazzy/opt/gz_plugin_vendor/lib:/opt/ros/jazzy/opt/gz_fuel_tools_vendor/lib:/opt/ros/jazzy/opt/gz_msgs_vendor/lib:/opt/ros/jazzy/opt/gz_common_vendor/lib:/opt/ros/jazzy/opt/gz_math_vendor/lib:/opt/ros/jazzy/opt/gz_utils_vendor/lib:/opt/ros/jazzy/opt/gz_tools_vendor/lib:/opt/ros/jazzy/opt/gz_ogre_next_vendor/lib:/opt/ros/jazzy/opt/gz_dartsim_vendor/lib:/opt/ros/jazzy/opt/gz_cmake_vendor/lib:/opt/ros/jazzy/lib', 'HOME': '/home/mojarras', 'TERMINFO': '/usr/lib/kitty/terminfo', 'MOZ_ENABLE_WAYLAND': '1', 'OLDPWD': '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/ControlTurtlesim', 'DESKTOP_SESSION': 'hyprland', 'KITTY_INSTALLATION_DIR': '/usr/lib/kitty', 'ROS_PYTHON_VERSION': '3', 'GTK_MODULES': 'gail:atk-bridge', 'LC_MONETARY': 'es_MX.UTF-8', 'KITTY_PID': '6878', 'GSM_SKIP_SSH_AGENT_WORKAROUND': 'true', 'DBUS_SESSION_BUS_ADDRESS': 'unix:path=/run/user/1000/bus', 'COLORTERM': 'truecolor', 'WAYLAND_DISPLAY': 'wayland-1', 'COLCON_PREFIX_PATH': '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install', 'ROS_DISTRO': 'jazzy', 'LOGNAME': 'mojarras', '_': '/usr/bin/colcon', 'ROS_VERSION': '2', 'XDG_SESSION_CLASS': 'user', 'KITTY_PUBLIC_KEY': '1:{d}>D5lI+c`V5n{1}M_)S+L^`g?+Z3^QVJ|ZtUPJ', 'USERNAME': 'mojarras', 'TERM': 'xterm-kitty', 'XDG_SESSION_ID': '1', 'ROS_LOCALHOST_ONLY': '1', 'HL_INITIAL_WORKSPACE_TOKEN': '73167c15-4f3d-47d0-a91d-c1dd51feb03c', 'PATH': '/home/mojarras/.local/bin:/opt/ros/jazzy/opt/gz_msgs_vendor/bin:/opt/ros/jazzy/opt/gz_tools_vendor/bin:/opt/ros/jazzy/opt/gz_ogre_next_vendor/bin:/opt/ros/jazzy/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin:/home/mojarras/ardu_ws/Micro-XRCE-DDS-Gen/scripts', 'PAPERSIZE': 'letter', 'LC_ADDRESS': 'es_MX.UTF-8', 'XDG_RUNTIME_DIR': '/run/user/1000', 'XCURSOR_THEME': 'Bibata-Modern-Classic', 'DISPLAY': ':0', 'HYPRCURSOR_SIZE': '16', 'LANG': 'en_US.UTF-8', 'XDG_CURRENT_DESKTOP': 'Hyprland', 'LC_TELEPHONE': 'es_MX.UTF-8', 'XDG_SESSION_DESKTOP': 'hyprland', 'LS_COLORS': 'di=01;34:fi=00:ex=01;35:ln=01;36:ow=01;34:tw=01;34:st=01;34:*.dat=01;35:*.tmp=01;35:*.sys=01;35:*.sh=01;35:*.log=01;35:', 'SSH_AUTH_SOCK': '/run/user/1000/gnupg/S.gpg-agent.ssh', 'ROS_DOMAIN_ID': '22', 'AMENT_PREFIX_PATH': '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim:/opt/ros/jazzy', 'SHELL': '/bin/bash', 'LC_NAME': 'es_MX.UTF-8', 'QT_ACCESSIBILITY': '1', 'GDMSESSION': 'hyprland', '_JAVA_AWT_WM_NONREPARENTING': '1', 'KITTY_WINDOW_ID': '1', 'LESSCLOSE': '/usr/bin/lesspipe %s %s', 'LC_MEASUREMENT': 'es_MX.UTF-8', 'LC_IDENTIFICATION': 'es_MX.UTF-8', 'GZ_VERSION': 'harmonic', 'ROS_AUTOMATIC_DISCOVERY_RANGE': 'SUBNET', 'XDG_VTNR': '2', 'PWD': '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim', 'XDG_BACKEND': 'wayland', 'XDG_DATA_DIRS': '/usr/local/share/:/usr/share/:/var/lib/snapd/desktop', 'STARSHIP_SESSION_KEY': '2166118573684620', 'PYTHONPATH': '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages:/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages:/opt/ros/jazzy/lib/python3.12/site-packages', 'LC_NUMERIC': 'es_MX.UTF-8', 'LC_PAPER': 'es_MX.UTF-8', 'COLCON': '1', 'CMAKE_PREFIX_PATH': '/opt/ros/jazzy/opt/gz_sim_vendor:/opt/ros/jazzy/opt/gz_sensors_vendor:/opt/ros/jazzy/opt/gz_physics_vendor:/opt/ros/jazzy/opt/sdformat_vendor:/opt/ros/jazzy/opt/gz_gui_vendor:/opt/ros/jazzy/opt/gz_transport_vendor:/opt/ros/jazzy/opt/gz_rendering_vendor:/opt/ros/jazzy/opt/gz_plugin_vendor:/opt/ros/jazzy/opt/gz_fuel_tools_vendor:/opt/ros/jazzy/opt/gz_msgs_vendor:/opt/ros/jazzy/opt/gz_common_vendor:/opt/ros/jazzy/opt/gz_math_vendor:/opt/ros/jazzy/opt/gz_utils_vendor:/opt/ros/jazzy/opt/gz_tools_vendor:/opt/ros/jazzy/opt/gz_ogre_next_vendor:/opt/ros/jazzy/opt/gz_dartsim_vendor:/opt/ros/jazzy/opt/gz_cmake_vendor'}, 'shell': False}
+[1.503004] (-) TimerEvent: {}
+[1.603301] (-) TimerEvent: {}
+[1.703612] (-) TimerEvent: {}
+[1.803890] (-) TimerEvent: {}
+[1.904169] (-) TimerEvent: {}
+[1.953394] (ControlTurtlesim) StdoutLine: {'line': b'running egg_info\n'}
+[1.995304] (ControlTurtlesim) StdoutLine: {'line': b'writing ../build/ControlTurtlesim/ControlTurtlesim.egg-info/PKG-INFO\n'}
+[1.995620] (ControlTurtlesim) StdoutLine: {'line': b'writing dependency_links to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/dependency_links.txt\n'}
+[1.995913] (ControlTurtlesim) StdoutLine: {'line': b'writing entry points to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/entry_points.txt\n'}
+[1.996143] (ControlTurtlesim) StdoutLine: {'line': b'writing requirements to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/requires.txt\n'}
+[1.996319] (ControlTurtlesim) StdoutLine: {'line': b'writing top-level names to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/top_level.txt\n'}
+[2.004285] (-) TimerEvent: {}
+[2.082289] (ControlTurtlesim) StdoutLine: {'line': b"reading manifest file '../build/ControlTurtlesim/ControlTurtlesim.egg-info/SOURCES.txt'\n"}
+[2.083501] (ControlTurtlesim) StdoutLine: {'line': b"writing manifest file '../build/ControlTurtlesim/ControlTurtlesim.egg-info/SOURCES.txt'\n"}
+[2.083786] (ControlTurtlesim) StdoutLine: {'line': b'running build\n'}
+[2.083936] (ControlTurtlesim) StdoutLine: {'line': b'running build_py\n'}
+[2.084147] (ControlTurtlesim) StdoutLine: {'line': b'copying ControlTurtlesim/ControlTurtleSim.py -> /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/build/lib/ControlTurtlesim\n'}
+[2.084431] (ControlTurtlesim) StdoutLine: {'line': b'running install\n'}
+[2.093974] (ControlTurtlesim) StdoutLine: {'line': b'running install_lib\n'}
+[2.104397] (-) TimerEvent: {}
+[2.136964] (ControlTurtlesim) StdoutLine: {'line': b'copying /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/build/lib/ControlTurtlesim/ControlTurtleSim.py -> /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages/ControlTurtlesim\n'}
+[2.137833] (ControlTurtlesim) StdoutLine: {'line': b'byte-compiling /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages/ControlTurtlesim/ControlTurtleSim.py to ControlTurtleSim.cpython-312.pyc\n'}
+[2.138856] (ControlTurtlesim) StdoutLine: {'line': b'running install_data\n'}
+[2.139099] (ControlTurtlesim) StdoutLine: {'line': b'running install_egg_info\n'}
+[2.181679] (ControlTurtlesim) StdoutLine: {'line': b"removing '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages/ControlTurtlesim-0.0.0-py3.12.egg-info' (and everything under it)\n"}
+[2.181985] (ControlTurtlesim) StdoutLine: {'line': b'Copying ../build/ControlTurtlesim/ControlTurtlesim.egg-info to /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages/ControlTurtlesim-0.0.0-py3.12.egg-info\n'}
+[2.184253] (ControlTurtlesim) StdoutLine: {'line': b'running install_scripts\n'}
+[2.204509] (-) TimerEvent: {}
+[2.304757] (-) TimerEvent: {}
+[2.405045] (-) TimerEvent: {}
+[2.437613] (ControlTurtlesim) StdoutLine: {'line': b'Installing control script to /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/ControlTurtlesim\n'}
+[2.438050] (ControlTurtlesim) StdoutLine: {'line': b"writing list of installed files to '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/install.log'\n"}
+[2.476302] (ControlTurtlesim) CommandEnded: {'returncode': 0}
+[2.492598] (ControlTurtlesim) JobEnded: {'identifier': 'ControlTurtlesim', 'rc': 0}
+[2.493662] (-) EventReactorShutdown: {}

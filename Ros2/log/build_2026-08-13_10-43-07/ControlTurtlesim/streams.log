@@ -1,0 +1,21 @@
+[1.472s] Invoking command in '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/ControlTurtlesim': PYTHONPATH=/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/ControlTurtlesim build --build-base /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/build install --record /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/install.log --single-version-externally-managed install_data
+[1.972s] running egg_info
+[2.013s] writing ../build/ControlTurtlesim/ControlTurtlesim.egg-info/PKG-INFO
+[2.013s] writing dependency_links to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/dependency_links.txt
+[2.013s] writing entry points to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/entry_points.txt
+[2.014s] writing requirements to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/requires.txt
+[2.014s] writing top-level names to ../build/ControlTurtlesim/ControlTurtlesim.egg-info/top_level.txt
+[2.095s] reading manifest file '../build/ControlTurtlesim/ControlTurtlesim.egg-info/SOURCES.txt'
+[2.096s] writing manifest file '../build/ControlTurtlesim/ControlTurtlesim.egg-info/SOURCES.txt'
+[2.096s] running build
+[2.096s] running build_py
+[2.097s] running install
+[2.107s] running install_lib
+[2.149s] running install_data
+[2.149s] running install_egg_info
+[2.191s] removing '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages/ControlTurtlesim-0.0.0-py3.12.egg-info' (and everything under it)
+[2.191s] Copying ../build/ControlTurtlesim/ControlTurtlesim.egg-info to /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages/ControlTurtlesim-0.0.0-py3.12.egg-info
+[2.193s] running install_scripts
+[2.445s] Installing control script to /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/ControlTurtlesim
+[2.467s] writing list of installed files to '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/install.log'
+[2.501s] Invoked command in '/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/ControlTurtlesim' returned '0': PYTHONPATH=/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/prefix_override:/usr/lib/python3/dist-packages/colcon_core/task/python/colcon_distutils_commands:/media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/install/ControlTurtlesim/lib/python3.12/site-packages:${PYTHONPATH} /usr/bin/python3 -W ignore:setup.py install is deprecated -W ignore:easy_install command is deprecated setup.py egg_info --egg-base ../build/ControlTurtlesim build --build-base /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/build install --record /media/mojarras/Wiwi/droneops/Learning-Projects/Ros2/build/ControlTurtlesim/install.log --single-version-externally-managed install_data
