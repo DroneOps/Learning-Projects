@@ -1,0 +1,32 @@
+# Colcon / ROS2 build artifacts
+build/
+install/
+log/
+
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+.venv/
+venv/
+ENV/
+env/
+.env
+.pytest_cache/
+.coverage
+*.egg-info/
+dist/
+.eggs/
+
+# Editors
+.vscode/
+.idea/
+
+# Local setup files
+local_setup.bash
+local_setup.sh
+local_setup.ps1
+
+# Misc
+*.swp
+.DS_Store
