@@ -5,10 +5,12 @@ En este módulo aprenderás a comunicarte directamente con el dron DJI Tello a t
 ---
 
 ## Requisitos e Instalación
-
-- djitellopy
-- opencv-python
-- pygame
+  
+```bash
+pip install djitellopy
+pip install opencv-python
+pip install pygame
+```
 
 ---
 
