@@ -2,9 +2,7 @@
 
 En este módulo aprenderás a comunicarte directamente con el dron DJI Tello a través de código en Python. Pasarás de recibir la transmisión de video en tiempo real a ejecutar secuencias de vuelo autónomas y tomar el control manual desde tu teclado.
 
----
-
-## Requisitos e Instalación
+Para poder volar el dron y usar su cámara vas a requerir python 3.13.7 y las siguientes instalaciones:
   
 ```bash
 pip install djitellopy
