@@ -1,5 +1,5 @@
 """
-Un script en el que aprenderas el control más básico PID.
+Un script en el que aprenderas el control más básico, PID.
 """
 
 import numpy as np
@@ -10,16 +10,15 @@ Primero tenemos que simular un sistema, usaremos unas ecuaciones muy simples de 
 en una sola dirección para que sea entendible.
 """
 # Estados iniciales y saltos de tiempo
-
-tiempo_total = 10 
-dt           = 1
+tiempo_total = 20 
+dt           = 0.01
 pasos        = int(tiempo_total/dt)
 
-setpoint = 100.0        # definimos la posición que tenemos como objetivo 
+setpoint = 100.0          # definimos la posición que tenemos como objetivo 
 
-pos = [0] * pasos       # definimos la posicion inicial lo hacemos vector para plotear más adelante
-vel = [1] * pasos       # velocidad 
-a   = [0] * pasos       # aceleración
+pos = [0.0] * pasos       # definimos la posicion inicial lo hacemos vector para plotear más adelante
+vel = [1.0] * pasos       # velocidad 
+a   = [0.0] * pasos       # aceleración
 time_axis = np.linspace(0, tiempo_total, pasos)
 
 # Ganancias PID (ajusta estos parametros para ver como cambia el comportamiento)
@@ -29,14 +28,10 @@ Kd = 0.0                # Ganancia derivativa
 
 # Variables de seguimiento para parte derivativa e integral
 error_integral   = 0.0
-error_derivativo = 0.0
 error_previo     = 0.0
 
-# Definimos variable de tiempo
-t = 0
-
 # Bucle principal
-while t in range(pasos - 1):
+for t in range(pasos - 1):
     # Calcular error del paso actual
     error = setpoint - pos[t]
 
