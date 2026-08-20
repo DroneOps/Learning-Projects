@@ -6,7 +6,7 @@ Se requiere `numpy` y `matplotlib`.
 Instalación de dependencias:
 
 ```bash
-pip install numpy matplotlib
+pip install -r Control/requirements.txt
 ```
 
 ## Uso y Modificación de Parámetros
@@ -14,3 +14,5 @@ pip install numpy matplotlib
 - Duración: Ajuste la variable tiempo para simular intervalos más extendidos.
 - Condiciones iniciales: Varie los valores de los arreglos vel y a para simular distintas dinámicas de
 entrada.
+
+
