@@ -22,8 +22,8 @@ Red Wi-Fi: Conéctate a la red Wi-Fi que emite el Tello (ej. TELLO-XXXXXX) desde
 
 # Guía de ejecución de scripts
 
-
+Para aprender de forma segura y ordenada, ejecuta los archivos en el siguiente orden:
 
 ```text
-[ 1. Tello ] ──> [ 2. Vision ] ──> [ 3. Control ] ──> [ 4. KalmanFilter ] ──> [ 5. Ros2 ]
-  (Hardware)       (Percepción)       (Matemáticas)       (Estimación)       (Robótica Pro)
+[ 1. Inicio.py ] ──> [ 2. Camara.py ] ──> [ 3. Mover.py ]
+  (Conexión/Batería)   (Transmisión Video)   (Control Manual)
