@@ -20,3 +20,13 @@ Este curso inicial es tu puerta de entrada rápida. Aquí no te vas a quedar en 
 Control y Pilotaje de Drones (Tello SDK)
 Visión por Computadora (OpenCV & ArUcos)
 Robótica Avanzada (ROS - Robot Operating System)
+
+---
+
+# Ruta de Aprendizaje Recomendada (¿Por dónde empiezo?)
+
+Para no abrumarte con tantas carpetas, te recomendamos seguir esta ruta ordenada de **5 pasos**. Cada módulo construye sobre el anterior:
+
+```text
+[ 1. Tello ] ──> [ 2. Vision ] ──> [ 3. Control ] ──> [ 4. KalmanFilter ] ──> [ 5. Ros2 ]
+  (Hardware)       (Percepción)       (Matemáticas)       (Estimación)       (Robótica Pro)
