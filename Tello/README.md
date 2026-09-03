@@ -17,3 +17,13 @@ Verifica el espacio: Vuela en un área abierta, sin obstáculos ni personas cerc
 Nivel de batería: El tello no va a volar con 20% de bateria.
 
 Red Wi-Fi: Conéctate a la red Wi-Fi que emite el Tello (ej. TELLO-XXXXXX) desde tu computadora antes de ejecutar cualquier programa.
+
+---
+
+# Guía de ejecución de scripts
+
+
+
+```text
+[ 1. Tello ] ──> [ 2. Vision ] ──> [ 3. Control ] ──> [ 4. KalmanFilter ] ──> [ 5. Ros2 ]
+  (Hardware)       (Percepción)       (Matemáticas)       (Estimación)       (Robótica Pro)
