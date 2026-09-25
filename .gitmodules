@@ -1,0 +1,3 @@
+[submodule "tello_utils"]
+	path = tello_utils
+	url = https://github.com/DroneOps/Tello-Utils.git
