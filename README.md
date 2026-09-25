@@ -14,19 +14,51 @@ Este curso inicial es tu puerta de entrada rápida. Aquí no te vas a quedar en 
 - Ventaja en tus Materias: Adelántate a los temas más complejos de tu carrera con un enfoque 100% práctico y mentoría entre compañeros.
 
 ---
-
 ## Proyectos del curso
 
-Control y Pilotaje de Drones (Tello SDK)
-Visión por Computadora (OpenCV & ArUcos)
-Robótica Avanzada (ROS - Robot Operating System)
+- Control y Pilotaje de Drones
+- Visión por Computadora
+- Robótica Avanzada
 
 ---
+## Paso 0: Instalar Git y Terminal
 
-# Ruta de Aprendizaje Recomendada (¿Por dónde empiezo?)
+Antes de empezar cualquier proyecto, necesitas configurar la terminal y el control de versiones. 
 
-Para no abrumarte con tantas carpetas, te recomendamos seguir esta ruta ordenada de **5 pasos**. Cada módulo construye sobre el anterior:
+### 🪟 En Windows
+
+La terminal nativa de Windows da problemas con nuestros scripts. Instala Git Bash.
+
+1. Descarga el instalador en [git-scm.com](https://git-scm.com/downloads).
+2. Abre el archivo descargado.
+3. Avanza en el instalador dejando todas las opciones por defecto.
+4. Abre la aplicación "Git Bash" desde el menú de inicio.
+5. Usa esta terminal para descargar repositorios y correr código.
+
+### 🍎 En Mac
+
+Mac ya trae una terminal Unix. Solo hace falta instalar Git.
+
+1. Abre la aplicación "Terminal".
+2. Verifica si ya tienes Git:
+   ```bash
+   git --version
+   ```
+3. Si no está instalado, el sistema pedirá instalar las herramientas de línea de comandos. Confirma la instalación.
+4. Si no aparece el mensaje, fuerza la instalación ejecutando:
+   ```bash
+   xcode-select --install
+   ```
+5. Cierra la terminal y vuelve a abrirla.
+
+**Para comprobar:** Abre tu terminal y ejecuta `git --version`. Si ves la versión, todo está listo.
+
+---
+## ¿Por dónde empiezo?
+
+Para llevar un aprendizaje paso a paso y no saltarte conceptos clave, te recomendamos avanzar en este orden:
 
 ```text
 [ 1. Tello ] ──> [ 2. Vision ] ──> [ 3. Control ] ──> [ 4. KalmanFilter ] ──> [ 5. Ros2 ]
   (Hardware)       (Percepción)       (Matemáticas)       (Estimación)       (Robótica Pro)
+```

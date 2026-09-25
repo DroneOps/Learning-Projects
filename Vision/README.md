@@ -1,7 +1,7 @@
 # Antes de hacer cualquier cosa, asegúrate de tener:
 
 ```bash
-pip install -r Vision/requirements.txt
+pip install -r requirements.txt
 ```
 El script de *Aruco.py* detecta marcadores ArUco en tiempo real usando la cámara del tello.
 

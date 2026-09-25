@@ -18,7 +18,7 @@ Se requiere `numpy` y `matplotlib`.
 Instalación de dependencias:
 
 ```bash
-pip install -r Control/requirements.txt
+pip install -r requirements.txt
 ```
 
 ## Uso y Modificación de Parámetros
