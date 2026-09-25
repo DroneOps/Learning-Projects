@@ -10,7 +10,7 @@ pip install -r requirements.txt
 
 ---
 
-## 🛠️ Herramientas Extra (`tello_utils`)
+## Tello Utils
 
 Dentro de este módulo encontrarás una carpeta llamada `tello_utils`. Es un submódulo con herramientas rápidas para facilitarte la vida en cada vuelo. Aquí podrás ejecutar scripts para:
 - Conectarte automáticamente al WiFi del dron (Linux).
