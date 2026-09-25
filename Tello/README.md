@@ -10,6 +10,15 @@ pip install -r requirements.txt
 
 ---
 
+## 🛠️ Herramientas Extra (`tello_utils`)
+
+Dentro de este módulo encontrarás una carpeta llamada `tello_utils`. Es un submódulo con herramientas rápidas para facilitarte la vida en cada vuelo. Aquí podrás ejecutar scripts para:
+- Conectarte automáticamente al WiFi del dron (Linux).
+- Revisar que la temperatura y la batería del dron sean seguras antes de despegar.
+- Hacer pruebas rápidas de movimiento de los motores y generar gráficas de rendimiento.
+
+---
+
 ## Reglas de Seguridad Antes de Volar
 
 Verifica el espacio: Vuela en un área abierta, sin obstáculos ni personas cerca para cuidar los más posible el dron.
