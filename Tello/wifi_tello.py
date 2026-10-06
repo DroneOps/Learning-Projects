@@ -41,11 +41,53 @@ def red_actual():
     return encontrado.group(1).strip() if encontrado else None
 
 
+def _escanear_mac():
+    """
+    Escanea redes en macOS. Desde macOS 14, el sistema oculta los nombres de las redes
+    (<redacted>) a menos que la app que corre el script (VS Code, Terminal...) tenga
+    permiso de Localización, así que lo pedimos antes de escanear.
+    """
+    try:
+        import CoreLocation
+        import CoreWLAN
+        from Foundation import NSDate, NSRunLoop
+    except ImportError:
+        # Sin pyobjc: usamos system_profiler (solo muestra nombres si ya hay permiso)
+        return re.findall(r"^\s+(.+?):\s*$", _ejecutar("system_profiler", "SPAirPortDataType"), re.M)
+
+    gestor = CoreLocation.CLLocationManager.alloc().init()
+    if gestor.authorizationStatus() == CoreLocation.kCLAuthorizationStatusNotDetermined:
+        print("macOS pedirá permiso de Localización para poder ver los nombres de las redes...")
+        gestor.requestWhenInUseAuthorization()
+        # Esperamos (hasta 15 s) a que el usuario responda la ventana de permiso
+        for _ in range(30):
+            if gestor.authorizationStatus() != CoreLocation.kCLAuthorizationStatusNotDetermined:
+                break
+            NSRunLoop.currentRunLoop().runUntilDate_(NSDate.dateWithTimeIntervalSinceNow_(0.5))
+
+    interfaz = CoreWLAN.CWWiFiClient.sharedWiFiClient().interface()
+    redes, _ = interfaz.scanForNetworksWithName_error_(None, None)
+    return [red.ssid() for red in redes or [] if red.ssid()]
+
+
+def redes_tello_guardadas():
+    """Redes TELLO- a las que esta computadora ya se conectó antes (el sistema nunca oculta estos nombres)."""
+    if SISTEMA == "Darwin":
+        salida = _ejecutar("networksetup", "-listpreferredwirelessnetworks", _interfaz_wifi_mac())
+    elif SISTEMA == "Linux":
+        salida = _ejecutar("nmcli", "-t", "-f", "name", "connection", "show")
+    elif SISTEMA == "Windows":
+        salida = _ejecutar("netsh", "wlan", "show", "profiles")
+    else:
+        salida = ""
+    # Funciona con cualquier idioma del sistema: solo buscamos los nombres TELLO-
+    return sorted(set(re.findall(rf"({PREFIJO_TELLO}\S+)", salida)))
+
+
 def buscar_redes_tello():
     """Escanea las redes cercanas y regresa las que empiezan con TELLO- (ordenadas, sin repetir)."""
     if SISTEMA == "Darwin":
-        salida = _ejecutar("system_profiler", "SPAirPortDataType")
-        nombres = re.findall(r"^\s+(.+?):\s*$", salida, re.M)
+        nombres = _escanear_mac()
     elif SISTEMA == "Linux":
         nombres = _ejecutar("nmcli", "-t", "-f", "ssid", "dev", "wifi", "list", "--rescan", "yes").splitlines()
     elif SISTEMA == "Windows":
@@ -93,11 +135,12 @@ def conectar(ssid, espera=20):
     return False
 
 
-def _elegir_red(redes):
+def _elegir_red(redes, guardadas=()):
     """Muestra un menu numerado con las redes Tello y regresa la elegida (None para salir)."""
     print("\nRedes Tello disponibles:")
     for numero, nombre in enumerate(redes, start=1):
-        print(f"  [{numero}] {nombre}")
+        nota = "  (guardada, no detectada en el escaneo)" if nombre in guardadas else ""
+        print(f"  [{numero}] {nombre}{nota}")
     print("  [R] Volver a buscar   [S] Salir")
 
     while True:
@@ -125,14 +168,21 @@ def asegurar_red_tello():
 
     while True:
         print("Buscando redes Tello cercanas...")
-        redes = buscar_redes_tello()
+        cercanas = buscar_redes_tello()
+        # Agregamos las redes Tello ya usadas antes, por si el escaneo no pudo ver sus nombres
+        guardadas = [r for r in redes_tello_guardadas() if r not in cercanas]
+        redes = cercanas + guardadas
 
         if not redes:
             print("No se encontró ninguna red TELLO-. Revisa que el dron esté encendido.")
             if SISTEMA == "Darwin":
-                print("En macOS, la terminal necesita permiso de Ubicación para ver los nombres de las redes:")
+                print("En macOS, la app donde corres el script (VS Code, Terminal...) necesita permiso de")
+                print("Localización para ver los nombres de las redes, y hay que reiniciarla tras darlo:")
                 print("  Ajustes del Sistema > Privacidad y seguridad > Localización.")
-                print("También puedes conectarte manualmente desde el ícono de Wi-Fi.")
+            elif SISTEMA == "Windows":
+                print("En Windows 11, activa la Ubicación para poder ver las redes cercanas:")
+                print("  Configuración > Privacidad y seguridad > Ubicación.")
+            print("También puedes conectarte manualmente desde el ícono de Wi-Fi.")
             if input("Presiona Enter para buscar de nuevo o 'S' para salir: ").strip().lower() == "s":
                 return None
             # Puede que el usuario se haya conectado manualmente mientras tanto
@@ -141,7 +191,7 @@ def asegurar_red_tello():
                 return actual
             continue
 
-        elegida = _elegir_red(redes)
+        elegida = _elegir_red(redes, guardadas)
         if elegida is None:
             return None
         if elegida == "REINTENTAR":

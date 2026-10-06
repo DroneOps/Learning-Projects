@@ -25,7 +25,7 @@ Verifica el espacio: Vuela en un área abierta, sin obstáculos ni personas cerc
 
 Nivel de batería: El tello no va a volar con 20% de bateria.
 
-Red Wi-Fi: Conéctate a la red Wi-Fi que emite el Tello (ej. TELLO-XXXXXX) desde tu computadora antes de ejecutar cualquier programa. `Inicio.py` lo revisa por ti: si no estás en una red `TELLO-`, busca las cercanas y te deja elegir una desde la terminal (usa `wifi_tello.py`). En macOS, la terminal necesita permiso de Localización para ver los nombres de las redes.
+Red Wi-Fi: Conéctate a la red Wi-Fi que emite el Tello (ej. TELLO-XXXXXX) desde tu computadora antes de ejecutar cualquier programa. `Inicio.py` lo revisa por ti: si no estás en una red `TELLO-`, busca las cercanas y te deja elegir una desde la terminal (usa `wifi_tello.py`). También muestra las redes `TELLO-` a las que ya te conectaste antes. En macOS y Windows 11, la app donde corres el script (VS Code, Terminal...) necesita permiso de Localización para ver los nombres de redes nuevas; reiníciala después de darlo.
 
 ---
 
