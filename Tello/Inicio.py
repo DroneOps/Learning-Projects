@@ -1,13 +1,20 @@
 # En esta seccion importamos la libreria tiempo y la libreria tello que nos permitira comunicarnos con el dron
 import time
 from djitellopy import Tello
+from wifi_tello import asegurar_red_tello
 
 # Definimos la funcion principal
 def principal():
+    # 0. Verificar que estemos en la red Wi-Fi del dron (si no, buscarla y elegirla)
+    red = asegurar_red_tello()
+    if red is None:
+        print("Sin conexión al dron. Vuelo cancelado.")
+        return
+
     # 1. Creamos la instancia de la herramienta que se conecta con el dron
     tello = Tello()
 
-    print("Conectando con el dron Tello...")
+    print(f"Conectando con el dron Tello (red {red})...")
     
     # 2. Establecer la conexión vía Wi-Fi
     tello.connect()
@@ -31,8 +38,11 @@ def principal():
 
     # 5. Pausa de espera
     # Dejamos que el dron se quede flotando (hovering) en el aire durante 5 segundos
-    print("Manteniéndose en el aire por 5 segundos...")
-    time.sleep(5)
+    # Mientras vuela mostramos la red y una cuenta regresiva en una sola linea
+    for restantes in range(5, 0, -1):
+        print(f"\r  En el aire  ·  Red: {red}  ·  Aterrizando en {restantes}s ", end="", flush=True)
+        time.sleep(1)
+    print()
 
     # 6. Aterrizaje automático
     # El dron bajara suavemente hasta el suelo y apagara los motores
