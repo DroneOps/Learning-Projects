@@ -1,6 +1,6 @@
 # En esta seccion importamos la libreria tiempo y la libreria tello que nos permitira comunicarnos con el dron
 import time
-from djitellopy import Tello
+from djitellopy import Tello, TelloException
 from wifi_tello import asegurar_red_tello
 
 # Definimos la funcion principal
@@ -29,12 +29,27 @@ def principal():
         print("Batería demasiado baja para un vuelo seguro. Carga el dron e intenta de nuevo.")
         return
 
+    # El Tello se calienta rapido encendido en el suelo y no despega si esta muy caliente
+    temperatura = tello.get_temperature()
+    print(f"Temperatura: {temperatura}°C")
+    if temperatura >= 85:
+        print("El dron está demasiado caliente para despegar. Apágalo y déjalo enfriar unos minutos.")
+        return
+
     print("\n--- INICIANDO SECUENCIA DE VUELO ---")
     
     # 4. Despegue automático
     # El dron subirá automáticamente y se mantiene suspendido
     print("Despegando...")
-    tello.takeoff()
+    try:
+        tello.takeoff()
+    except TelloException:
+        print("El dron rechazó el despegue. Causas comunes:")
+        print("  - Está caliente: apágalo unos minutos antes de volver a intentar.")
+        print("  - El piso es oscuro, brilloso, liso o hay poca luz: ponlo en un piso plano con textura.")
+        print("  - Necesita calibrar la IMU: app Tello > Ajustes > Calibración.")
+        print("  - Una hélice está doblada o roza con el protector.")
+        return
 
     # 5. Pausa de espera
     # Dejamos que el dron se quede flotando (hovering) en el aire durante 5 segundos
