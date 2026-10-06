@@ -41,33 +41,62 @@ def red_actual():
     return encontrado.group(1).strip() if encontrado else None
 
 
+# App auxiliar de macOS: se compila una sola vez fuera del repositorio (ver escaner_wifi_mac.swift)
+_FUENTE_ESCANER = os.path.join(os.path.dirname(os.path.abspath(__file__)), "escaner_wifi_mac.swift")
+_APP_ESCANER = os.path.expanduser("~/Library/Application Support/TelloWiFi/TelloWiFi.app")
+_INFO_PLIST = """<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0"><dict>
+  <key>CFBundleIdentifier</key><string>mx.droneops.tellowifi</string>
+  <key>CFBundleName</key><string>TelloWiFi</string>
+  <key>CFBundleExecutable</key><string>TelloWiFi</string>
+  <key>CFBundlePackageType</key><string>APPL</string>
+  <key>LSUIElement</key><true/>
+  <key>NSLocationUsageDescription</key><string>Para ver los nombres de las redes Wi-Fi del dron Tello.</string>
+  <key>NSLocationWhenInUseUsageDescription</key><string>Para ver los nombres de las redes Wi-Fi del dron Tello.</string>
+</dict></plist>"""
+
+
+def _compilar_escaner_mac():
+    """Compila la app auxiliar si no existe o si el codigo cambio. Regresa True si esta lista."""
+    binario = os.path.join(_APP_ESCANER, "Contents", "MacOS", "TelloWiFi")
+    if os.path.exists(binario) and os.path.getmtime(binario) >= os.path.getmtime(_FUENTE_ESCANER):
+        return True
+
+    print("Preparando el escáner de Wi-Fi para macOS (solo la primera vez)...")
+    os.makedirs(os.path.dirname(binario), exist_ok=True)
+    with open(os.path.join(_APP_ESCANER, "Contents", "Info.plist"), "w") as archivo:
+        archivo.write(_INFO_PLIST)
+    compilado = subprocess.run(["swiftc", "-O", _FUENTE_ESCANER, "-o", binario], capture_output=True, text=True)
+    if compilado.returncode != 0:
+        print("No se pudo compilar el escáner (instala las herramientas con: xcode-select --install).")
+        return False
+    # macOS solo guarda permisos de apps firmadas; una firma local ("-") es suficiente
+    _ejecutar("codesign", "--force", "--sign", "-", _APP_ESCANER)
+    return True
+
+
 def _escanear_mac():
     """
     Escanea redes en macOS. Desde macOS 14, el sistema oculta los nombres de las redes
-    (<redacted>) a menos que la app que corre el script (VS Code, Terminal...) tenga
-    permiso de Localización, así que lo pedimos antes de escanear.
+    (<redacted>) a los scripts de terminal; solo una app con permiso de Localización
+    puede verlos, así que usamos una pequeña app auxiliar para escanear.
     """
-    try:
-        import CoreLocation
-        import CoreWLAN
-        from Foundation import NSDate, NSRunLoop
-    except ImportError:
-        # Sin pyobjc: usamos system_profiler (solo muestra nombres si ya hay permiso)
+    if not _compilar_escaner_mac():
+        # Sin la app auxiliar: system_profiler (solo muestra nombres si la terminal ya tiene permiso)
         return re.findall(r"^\s+(.+?):\s*$", _ejecutar("system_profiler", "SPAirPortDataType"), re.M)
 
-    gestor = CoreLocation.CLLocationManager.alloc().init()
-    if gestor.authorizationStatus() == CoreLocation.kCLAuthorizationStatusNotDetermined:
-        print("macOS pedirá permiso de Localización para poder ver los nombres de las redes...")
-        gestor.requestWhenInUseAuthorization()
-        # Esperamos (hasta 15 s) a que el usuario responda la ventana de permiso
-        for _ in range(30):
-            if gestor.authorizationStatus() != CoreLocation.kCLAuthorizationStatusNotDetermined:
-                break
-            NSRunLoop.currentRunLoop().runUntilDate_(NSDate.dateWithTimeIntervalSinceNow_(0.5))
-
-    interfaz = CoreWLAN.CWWiFiClient.sharedWiFiClient().interface()
-    redes, _ = interfaz.scanForNetworksWithName_error_(None, None)
-    return [red.ssid() for red in redes or [] if red.ssid()]
+    with tempfile.NamedTemporaryFile(suffix=".txt", delete=False) as archivo:
+        salida = archivo.name
+    try:
+        # La primera vez, macOS pide permiso de Localización para "TelloWiFi"
+        subprocess.run(["open", "-W", "-n", _APP_ESCANER, "--args", salida], timeout=90)
+        with open(salida) as archivo:
+            return archivo.read().splitlines()
+    except (OSError, subprocess.TimeoutExpired):
+        return []
+    finally:
+        os.remove(salida)
 
 
 def redes_tello_guardadas():
