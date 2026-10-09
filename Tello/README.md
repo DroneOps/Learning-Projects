@@ -17,6 +17,19 @@ Dentro de este módulo encontrarás una carpeta llamada `tello_utils`. Es un sub
 - Revisar que la temperatura y la batería del dron sean seguras antes de despegar.
 - Hacer pruebas rápidas de movimiento de los motores y generar gráficas de rendimiento.
 
+### Inicialización del Submódulo
+
+Si acabas de clonar el proyecto o la carpeta `tello_utils` se encuentra vacía, inicialízala y descarga su contenido ejecutando el siguiente comando desde la raíz del repositorio (`Learning-Projects`):
+
+```bash
+git submodule update --init --recursive
+```
+
+> **Nota:** Si solo deseas inicializar y actualizar específicamente este submódulo, puedes ejecutar:
+> ```bash
+> git submodule update --init Tello/tello_utils
+> ```
+
 ---
 
 ## Reglas de Seguridad Antes de Volar
